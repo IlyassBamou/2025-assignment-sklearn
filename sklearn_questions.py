@@ -207,7 +207,8 @@ class MonthlySplit(BaseCrossValidator):
         return X_df, pd.DatetimeIndex(times)
 
     def _get_time_data(self, X):
-        """Helper to extract and validate time series data."""
+        """Helper to extract and validate time series data.
+        """
         if not isinstance(X, (pd.DataFrame, pd.Series)):
             # Create a DataFrame to ensure we can access index or columns
             X = pd.DataFrame(X)
