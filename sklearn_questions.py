@@ -1,5 +1,5 @@
-
 """Assignment - making a sklearn estimator and cv splitter.
+
 The goal of this assignment is to implement by yourself:
 - a scikit-learn estimator for the KNearestNeighbors for classification
   tasks and check that it is working properly.
@@ -208,8 +208,7 @@ class MonthlySplit(BaseCrossValidator):
         return X_df, pd.DatetimeIndex(times)
 
     def _get_time_data(self, X):
-        """Helper to extract and validate time series data.
-        """
+        """Helper to extract and validate time series data."""
         if not isinstance(X, (pd.DataFrame, pd.Series)):
             # Create a DataFrame to ensure we can access index or columns
             X = pd.DataFrame(X)
@@ -233,6 +232,7 @@ class MonthlySplit(BaseCrossValidator):
 
     def get_n_splits(self, X, y=None, groups=None):
         """Return the number of splitting iterations in the cross-validator.
+
         ... (docstring omitted for brevity) ...
         """
         _, times = self._extract_times(X)
